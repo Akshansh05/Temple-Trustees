@@ -1,0 +1,96 @@
+.navbar {
+    margin-bottom: 0;
+    background-color: red;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity:0.9;
+}
+
+/* Add a gray color to all navbar links */
+.navbar li a, .navbar .navbar-brand { 
+    color: #fff !important;
+}
+
+/* On hover, the links will turn blue */
+.navbar-nav li a:hover {
+    color: blue !important;
+cursor: pointer;
+}
+
+/* The active link */
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color:black!important;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+/* Dropdown */
+.open .dropdown-toggle {
+    color: #fff ;
+    background-color: #555 !important;
+}
+
+/* Dropdown links */
+.dropdown-menu li a {
+    color: #000 !important;
+}
+
+/* On hover, the dropdown links will turn red */
+.dropdown-menu li a:hover {
+    background-color: red !important;
+}
+.carousel-inner img {
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+}
+
+.carousel-caption h3 {
+    color: #fff !important;
+}
+.btn
+{background-color: green;
+margin-top:2%;
+margin-bottom:2%;
+}
+
+body
+{background:url(abtback.jpg) no-repeat center center fixed ;
+-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#content
+{ color: white;
+}
+#error,#error1{
+    color:red;
+    margin-bottom: 2%;
+    width: auto;
+}
+footer {
+    background-color: red;
+    color: #f5f5f5;
+    padding-bottom:1%;
+opacity:0.8;
+}
+
+footer a {
+    color: #f5f5f5;
+}
+
+footer a:hover {
+    color: #777;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+}
