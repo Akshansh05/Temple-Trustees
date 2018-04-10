@@ -95,17 +95,7 @@ select {
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
            <li><a onclick="document.getElementById('id02').style.display='block'" style="width:auto;">CHANGE PASSWORD</a>
-<div id="id02" class="modal1">
-<form class="modal-content1 animate" method="POST" onsubmit="return myFunction1();" action="changepassword.php" id="changepassword"> 
-  <div class="container2">    
- <label><b> New Password: </b></label><input type="password" placeholder="Password must be greater than 8 characters" name="newpsw1" required>
- <label><b>Repeat Password:</b></label>
-    <input type="password" placeholder="Repeat Password" name="newpsw-repeat" required>
-   <button type="submit"  class="signup" id="change">Change</button>
-    <button type="button" class="cancelbtn" onclick="location.href='profile.php'">Cancel</button><br>
-  </div>
-</form>
-</div>
+
 </li>
  <li><a onclick="myFunction()" style="width:auto; ">DELETE ACCOUNT</a></li>
             <li><a href="logout.php" style="width:auto;">LOGOUT</a></li>
@@ -114,6 +104,17 @@ select {
     </div>
   </div>
 </nav>
+<div id="id02" class="modal1">
+<form class="modal-content1 animate" method="POST" onsubmit="return myFunction1();" action="changepassword.php" id="changepassword"> 
+  <div class="container2">    
+ <label><b> New Password: </b></label><input type="password" placeholder="Must be greater than 8 characters" name="newpsw1" required>
+ <label><b>Repeat Password:</b></label>
+    <input type="password" placeholder="Repeat Password" name="newpsw-repeat" required>
+   <button type="submit"  class="signup" id="change">Change</button>
+    <button type="button" class="cancelbtn" onclick="location.href='profile.php'">Cancel</button><br>
+  </div>
+</form>
+</div>
 <div class="container">
   <h1 Style="text-align:center;color:#ADFF2F" class="animated bounceInDown">Welcome <?php echo  strtoupper($_SESSION['name1']); ?></h1><br> <br>
   <button type="button"  class="btn btn-primary btn-lg btn-block animated bounceInLeft"  Style="background-color:#20B2AA;">Account Statement</button><br> <br>
@@ -167,14 +168,26 @@ select {
   <script>
 var modal1 = document.getElementById('id02');
 var modal2 = document.getElementById('id03');
-window.onclick = function(event) {
-  if (event.target == modal1) {
-        modal1.style.display = "none";
+var modal3 = document.getElementById('id04');
+$('#id02').click(function(e) {
+    if (e.target == modal1) {
+       e.stopPropagation();
+    $(this).fadeOut(300);
     }
-    if(event.target == modal2){
-       modal2.style.display = "none";
+});
+$('#id03').click(function(e) {
+    if (e.target == modal2) {
+       e.stopPropagation();
+    $(this).fadeOut(300);
     }
-}
+});
+$('#id04').click(function(e) {
+    if (e.target == modal3) {
+       e.stopPropagation();
+    $(this).fadeOut(300);
+    }
+});
+var modal2 = document.getElementById('id03');
 function myFunction() {
     var r = confirm("Are you sure you want to delete your account?");
     if (r == true) {
@@ -193,6 +206,15 @@ function myFunction1() {
          return false;
     }
 }
+$(function(){ 
+     var navMain = $(".navbar-collapse"); // avoid dependency on #id
+     // "a:not([data-toggle])" - to avoid issues caused
+     // when you have dropdown inside navbar
+     navMain.on("click", "a:not([data-toggle])", null, function () {
+         navMain.collapse('hide');
+     });
+ });
+
 
 </script>
 

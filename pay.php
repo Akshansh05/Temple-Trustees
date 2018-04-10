@@ -6,6 +6,12 @@ $price = $_POST["amt"];
 $name = $_SESSION["name1"];
 $phone = $_POST["phone"];
 $email = $_SESSION["email"];
+if(strlen($phone<10)||strlen($phone>13)){
+ echo "<script language=\"JavaScript\">\n";
+echo "alert('Enter a valid Phone Number');\n";
+echo "window.location='profile.php'";
+echo "</script>"; 
+}
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://test.instamojo.com/api/1.1/payment-requests/');
 curl_setopt($ch, CURLOPT_HEADER, FALSE);
@@ -19,9 +25,9 @@ $payload = Array(
     'amount' => $price,
     'phone' => $phone,
     'buyer_name' => $name,
-    'redirect_url' => 'thankyou.php',
+    'redirect_url' => 'http://localhost/pro%202/thankyou.php',
     'send_email' => true,
-    'webhook' => '',
+    'webhook' => 'http://78e93321.ngrok.io/pro%202/webhook.php',
     'send_sms' => true,
     'email' => $email,
     'allow_repeated_payments' => false
@@ -30,10 +36,10 @@ curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($payload));
 $response = curl_exec($ch);
 curl_close($ch); 
-echo $response;
-//$json_decode = json_decode($response , true);
+//echo $response;
+$json_decode = json_decode($response , true);
 //
-//$long_url = $json_decode['payment_request']['longurl'] ;
-//echo $long_url
-//header ('Location:'.$long_url);
+$long_url = $json_decode['payment_request']['longurl'] ;
+////echo $long_url;
+header ('Location:'.$long_url);
   ?>
