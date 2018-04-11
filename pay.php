@@ -5,7 +5,7 @@ $product_name = $_POST["trustname"];
 $price = $_POST["amt"];
 $name = $_SESSION["name1"];
 $phone = $_POST["phone"];
-$email = $_SESSION["email"];
+$email = $_SESSION["email"]; 
 if(strlen($phone<10)||strlen($phone>13)){
  echo "<script language=\"JavaScript\">\n";
 echo "alert('Enter a valid Phone Number');\n";
@@ -27,10 +27,10 @@ $payload = Array(
     'buyer_name' => $name,
     'redirect_url' => 'http://localhost/pro%202/thankyou.php',
     'send_email' => true,
-    'webhook' => 'http://78e93321.ngrok.io/pro%202/webhook.php',
+    'webhook' => 'http://05d644f5.ngrok.io/pro%202/webhook.php',
     'send_sms' => true,
     'email' => $email,
-    'allow_repeated_payments' => false
+    'allow_repeated_payments' => false,
 );
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($payload));

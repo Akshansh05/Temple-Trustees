@@ -77,6 +77,18 @@ select {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 5px solid black;
+    background-color: #DEB887;
+}
+
+th, td {
+    text-align: left;
+}
+
 
 
     </style>
@@ -117,7 +129,72 @@ select {
 </div>
 <div class="container">
   <h1 Style="text-align:center;color:#ADFF2F" class="animated bounceInDown">Welcome <?php echo  strtoupper($_SESSION['name1']); ?></h1><br> <br>
-  <button type="button"  class="btn btn-primary btn-lg btn-block animated bounceInLeft"  Style="background-color:#20B2AA;">Account Statement</button><br> <br>
+  <button type="button"  class="btn btn-primary btn-lg btn-block animated bounceInLeft"  Style="background-color:#20B2AA;" onclick="document.getElementById('id05').style.display='block'">Account Statement</button><br> <br>
+  <div id="id05" class="modal1">
+  <div class="container2"> 
+     <div class="table-responsive"> 
+  <table class="table table-hover">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+      <th>Points</th>
+    </tr>
+    <tr>
+      <td>Jill</td>
+      <td>Smith</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Eve</td>
+      <td>Jackson</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+      <td>94</td>
+    </tr>
+    <tr>
+      <td>Adam</td>
+      <td>Johnson</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+      <td>67</td>
+    </tr>
+  </table>
+</div>
+    <button type="button" class="btn btn-primary btn-lg" Style="background-color:green; margin-left:50%; "  onclick="location.href='profile.php'">ok</button><br>
+  </div>
+</div>
   <button type="button" class="btn btn-primary btn-lg btn-block animated bounceInRight" Style="background-color:green;" onclick="document.getElementById('id04').style.display='block'">Pay the Trustees</button><br> <br>
   <div id="id04" class="modal1">
 <form class="modal-content1 animate" method="POST" action="pay.php" id="feedback"> 
@@ -169,6 +246,7 @@ select {
 var modal1 = document.getElementById('id02');
 var modal2 = document.getElementById('id03');
 var modal3 = document.getElementById('id04');
+var modal4 = document.getElementById('id05');
 $('#id02').click(function(e) {
     if (e.target == modal1) {
        e.stopPropagation();
@@ -183,6 +261,12 @@ $('#id03').click(function(e) {
 });
 $('#id04').click(function(e) {
     if (e.target == modal3) {
+       e.stopPropagation();
+    $(this).fadeOut(300);
+    }
+});
+$('#id05').click(function(e) {
+    if (e.target == modal4) {
        e.stopPropagation();
     $(this).fadeOut(300);
     }

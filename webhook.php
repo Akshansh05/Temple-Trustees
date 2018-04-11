@@ -1,6 +1,8 @@
 <?php
 include("connect.php");
  include("pay.php");
+date_default_timezone_set('Asia/Kolkata');
+$today = date('d-m-Y H:i'); 
 $data = $_POST;
 $mac_provided = $data['mac'];  // Get the MAC from the POST data
 unset($data['mac']);  // Remove the MAC key from the data.
@@ -47,9 +49,9 @@ if($mac_provided == $mac_calculated){
                 $paymentreq_id1=$data["payment_request_id"];
                 $payment_id1=$data['payment_id'];
                 $amount1=intval($data['amount']);
-                if(mysqli_query($conn, "INSERT INTO pay (buyer,buyer_name,buyer_phone,trust_name,payment_request_id,payment_id,amount) VALUES ('$buyer1','$buyer_name1','$buyer_phone1','$product_name1','$paymentreq_id1','$payment_id1','$amount1')"))
+                if(mysqli_query($conn, "INSERT INTO pay (buyer,buyer_name,buyer_phone,trust_name,payment_request_id,payment_id,amount,date1) VALUES ('$buyer1','$buyer_name1','$buyer_phone1','$product_name1','$paymentreq_id1','$payment_id1','$amount1','$today')"))
                 {
-
+                 // Payment was successful
                 }
     }
     else{

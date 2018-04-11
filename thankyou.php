@@ -3,6 +3,8 @@
  include("login.php");
 $payid = $_GET["payment_id"];
 $payreq = $_GET["payment_request_id"];
+date_default_timezone_set('Asia/Kolkata');
+$today = date('d-m-Y H:i'); 
         header('Refresh: 5; URL=profile.php');
   ?>
 <!DOCTYPE html>
@@ -23,10 +25,12 @@ $payreq = $_GET["payment_request_id"];
       <h1 style="color:#6da552"><b>Thank You <?php echo  strtoupper($_SESSION['name1']); ?>, Payment success!!</b></h1>
   
 <?php
-echo "payement id-";
+echo "Payement id-";
         echo $payid. "<br>";
-        echo "request id-";
+        echo "Request id-";
         echo $payreq. "<br>";
+         echo "Date-";
+        echo $today. "<br>";
 ?>
  
 
