@@ -42,7 +42,7 @@ $new_initial_amount=$value-$t_amount;
 			return false;
 		}
     }
-    $met3="Amount after transfer to ".$d_email ." the Account";
+    $met3="Amount after transfer to ".$d_email ."  Account";
     $met4="Amount after receiving from ". $email. " Account";
 $sql2 = "UPDATE transfer SET amount='$new_initial_amount', date='$today',method='$met3' WHERE trustname='$initial_product'and buyer='$email'";
     $result2 = mysqli_query($conn,$sql2);
