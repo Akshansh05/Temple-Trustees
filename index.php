@@ -151,14 +151,14 @@ echo "</script>";
     </div>
 
     <div class="item">
-      <img src="b.jpg" alt="Temple 2">
+      <img src="b.JPG" alt="Temple 2">
       <div class="carousel-caption">
         <h3>Temple B</h3>
       </div> 
     </div>
 
     <div class="item">
-      <img src="c.jpg" alt="Temple 3">
+      <img src="c.JPG" alt="Temple 3">
       <div class="carousel-caption">
         <h3>Temple C</h3>
       </div> 
