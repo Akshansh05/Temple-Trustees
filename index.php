@@ -195,7 +195,7 @@ Hindus believe that their lives are merely stages in the progression to ultimate
 <p>In India caves have always been thought of as places of great sanctity. Most of the earliest surviving Buddhist, Jain and Hindu shrines are rock cut caves. In later Hindu temples the garbagriha is designed to resemble a cave. It is small and dark and the surfaces of the walls are unadorned and massive. It is a place that encourages meditation which is possible only in solitude. Approaching the shrine is a movement from open spaces to a confined small space; from light to darkness, from a profusion of visual form and decoration to the visual simplicity of the cave. From this sanctuary the implied movement is vertical, to the symbolic mountain peak directly above the image of the god. This movement upwards is linked wo the idea of enlightenment which is identified with the crowning final of the temple - the amalaka or sikara.
 </p>
 </div>
-<button type="button" class="btn btn-primary btn-lg" onclick="location.href='getstarted.html'">GET STARTED</button>
+<button type="button" class="btn btn-primary btn-lg" onclick="location.href='getstarted.php'">GET STARTED</button>
 </div>
 <footer class="text-center">
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">

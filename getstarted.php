@@ -1,6 +1,10 @@
 <?php
 include("connect.php");
-
+ $sql = "SELECT trustname,amount FROM transfer";
+$result = mysqli_query($conn,$sql);
+$row = mysqli_fetch_assoc($result);
+$value= $row['amount'];
+$tname=$row['trustname'];
 
 
 ?>

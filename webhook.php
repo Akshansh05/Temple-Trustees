@@ -75,7 +75,7 @@ if($mac_provided == $mac_calculated){
     else {$result2 = mysqli_query($conn,"SELECT amount FROM transfer WHERE trustname='$product_name1'and buyer='$buyer1'");
 		$row2 = mysqli_fetch_array($result2);
        $new_amount=$amount1+$row2['amount'];
-       $sql1 = "UPDATE transfer SET amount='$new_amount', date='$today',method='$payment_id1' WHERE trustname='$product_name1'and buyer='$buyer1'";
+       $sql1 = "UPDATE transfer SET amount='$new_amount', date='$today', met4='$payment_id1' WHERE trustname='$product_name1'and buyer='$buyer1'";
     $result1 = mysqli_query($conn,$sql1);
  }
     }
