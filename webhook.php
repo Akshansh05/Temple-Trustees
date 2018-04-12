@@ -53,6 +53,31 @@ if($mac_provided == $mac_calculated){
                 {
                  // Payment was successful
                 }
+                function trust_exists($buyer1,$product_name1, $conn)
+	{
+		$result = mysqli_query($conn,"SELECT * FROM transfer WHERE trustname='$product_name1'and buyer='$buyer1'");
+		$row = mysqli_fetch_array($result);
+		if(mysqli_num_rows($result) == 1)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}    if (!trust_exists($buyer1,$product_name1, $conn)) {
+   
+                if(mysqli_query($conn, "INSERT INTO transfer (buyer,buyer_name,trustname,date,amount,method) VALUES ('$buyer1','$buyer_name1','$product_name1','$today','$amount1','$payment_id1')"))
+{
+    //insert into transfer for initial values
+}
+    }
+    else {$result2 = mysqli_query($conn,"SELECT amount FROM transfer WHERE trustname='$product_name1'and buyer='$buyer1'");
+		$row2 = mysqli_fetch_array($result2);
+       $new_amount=$amount1+$row2['amount'];
+       $sql1 = "UPDATE transfer SET amount='$new_amount', date='$today',method='$payment_id1' WHERE trustname='$product_name1'and buyer='$buyer1'";
+    $result1 = mysqli_query($conn,$sql1);
+ }
     }
     else{
        // Payment was unsuccessful, mark it as failed in your database

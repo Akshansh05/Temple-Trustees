@@ -1,3 +1,9 @@
+<?php
+include("connect.php");
+
+
+
+?>
 <html>
 <head>
   <title>TEMPLES AND THEIR TRUST DETAILS</title>
