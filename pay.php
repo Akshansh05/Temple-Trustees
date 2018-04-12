@@ -6,7 +6,7 @@ $price = $_POST["amt"];
 $name = $_SESSION["name1"];
 $phone = $_POST["phone"];
 $email = $_SESSION["email"]; 
-if(strlen($phone<10)||strlen($phone>13)){
+if(strlen($phone)<10||strlen($phone)>13){
  echo "<script language=\"JavaScript\">\n";
 echo "alert('Enter a valid Phone Number');\n";
 echo "window.location='profile.php'";
