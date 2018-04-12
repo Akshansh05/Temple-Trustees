@@ -1,13 +1,3 @@
-<?php
-include("connect.php");
- $sql = "SELECT trustname,amount FROM transfer";
-$result = mysqli_query($conn,$sql);
-$row = mysqli_fetch_assoc($result);
-$value= $row['amount'];
-$tname=$row['trustname'];
-
-
-?>
 <html>
 <head>
   <title>TEMPLES AND THEIR TRUST DETAILS</title>
@@ -31,7 +21,28 @@ $tname=$row['trustname'];
 <label style="color:blue;">Address : </label> 199, 3rd Main, Chamarajpet, Bangalore-560018<br>
 <label style="color:blue;">Phone :</label> +91-80-25300643<br>
 <label style="color:blue;">Type: </label> Religious Trusts<br>
-<label style="color:blue;">Current Fund Status : </label> <br>
+<?php
+include("connect.php");
+ $sql = "SELECT trustname,sum(amount) FROM transfer GROUP BY trustname ";
+$result = mysqli_query($conn,$sql);
+$flag=0;
+while($row = mysqli_fetch_assoc($result))
+{
+$tname=$row['trustname'];
+$value= $row['sum(amount)'];
+if($tname=='Mahaveer Swamy Jain Shwetamber'){
+  $flag=1;
+  break;
+}
+}
+if($flag==1)
+{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".$value ." <br>";
+}
+else{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".'0' ." <br>";
+}
+?>
 </div>
 <div class="t1">
   <h3 style="color:red;">Seetharam Mandir Trust</h3>
@@ -42,8 +53,28 @@ $tname=$row['trustname'];
   <br>
   <label style="color:blue;">Type: </label> Religious Trusts
   <br>
-  <label style="color:blue;">Current Fund Status : </label>
-  <br>
+<?php
+include("connect.php");
+ $sql = "SELECT trustname,sum(amount) FROM transfer GROUP BY trustname ";
+$result = mysqli_query($conn,$sql);
+$flag=0;
+while($row = mysqli_fetch_assoc($result))
+{
+$tname=$row['trustname'];
+$value= $row['sum(amount)'];
+if($tname=='Seetharam Mandir Trust'){
+  $flag=1;
+  break;
+}
+}
+if($flag==1)
+{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".$value ." <br>";
+}
+else{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".'0' ." <br>";
+}
+?>
 </div>
 <div class="t1">
   <h3 style="color:red;">Sri Krishna and Asthalakshmi Temple</h3>
@@ -54,8 +85,28 @@ $tname=$row['trustname'];
   <br>
   <label style="color:blue;">Type: </label> Religious Trusts
   <br>
-  <label style="color:blue;">Current Fund Status : </label>
-  <br>
+  <?php
+include("connect.php");
+ $sql = "SELECT trustname,sum(amount) FROM transfer GROUP BY trustname ";
+$result = mysqli_query($conn,$sql);
+$flag=0;
+while($row = mysqli_fetch_assoc($result))
+{
+$tname=$row['trustname'];
+$value= $row['sum(amount)'];
+if($tname=='Sri Krishna and Asthalakshmi'){
+  $flag=1;
+  break;
+}
+}
+if($flag==1)
+{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".$value ." <br>";
+}
+else{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".'0' ." <br>";
+}
+?>
 </div>
 <div class="t1">
   <h3 style="color:red;">World Renewal Spiritual Trust</h3>
@@ -66,8 +117,28 @@ $tname=$row['trustname'];
   <br>
   <label style="color:blue;">Type: </label> Religious Trusts
   <br>
-  <label style="color:blue;">Current Fund Status : </label>
-  <br>
+ <?php
+include("connect.php");
+ $sql = "SELECT trustname,sum(amount) FROM transfer GROUP BY trustname ";
+$result = mysqli_query($conn,$sql);
+$flag=0;
+while($row = mysqli_fetch_assoc($result))
+{
+$tname=$row['trustname'];
+$value= $row['sum(amount)'];
+if($tname=='World Renewal Spiritual'){
+  $flag=1;
+  break;
+}
+}
+if($flag==1)
+{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".$value ." <br>";
+}
+else{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".'0' ." <br>";
+}
+?>
 </div>
 <div class="t1">
   <h3 style="color:red;">Sri Jagadguru Udaseen Ashram Trust</h3>
@@ -78,8 +149,28 @@ $tname=$row['trustname'];
   <br>
   <label style="color:blue;">Type: </label> Religious Trusts
   <br>
-  <label style="color:blue;">Current Fund Status : </label>
-  <br>
+  <?php
+include("connect.php");
+ $sql = "SELECT trustname,sum(amount) FROM transfer GROUP BY trustname ";
+$result = mysqli_query($conn,$sql);
+$flag=0;
+while($row = mysqli_fetch_assoc($result))
+{
+$tname=$row['trustname'];
+$value= $row['sum(amount)'];
+if($tname=='Sri Jagadguru Udaseen Ashram'){
+  $flag=1;
+  break;
+}
+}
+if($flag==1)
+{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".$value ." <br>";
+}
+else{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".'0' ." <br>";
+}
+?>
 </div>
 <div class="t1">
   <h3 style="color:red;">Jain Swethamber Terapanth Trust</h3>
@@ -90,8 +181,28 @@ $tname=$row['trustname'];
   <br>
   <label style="color:blue;">Type: </label> Religious Trusts
   <br>
-  <label style="color:blue;">Current Fund Status : </label>
-  <br>
+  <?php
+include("connect.php");
+ $sql = "SELECT trustname,sum(amount) FROM transfer GROUP BY trustname ";
+$result = mysqli_query($conn,$sql);
+$flag=0;
+while($row = mysqli_fetch_assoc($result))
+{
+$tname=$row['trustname'];
+$value= $row['sum(amount)'];
+if($tname=='Jain Swethamber Terapanth'){
+  $flag=1;
+  break;
+}
+}
+if($flag==1)
+{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".$value ." <br>";
+}
+else{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".'0' ." <br>";
+}
+?>
 </div>
 <div class="t1">
   <h3 style="color:red;"> Swamy Ayyappan Temple</h3>
@@ -102,8 +213,28 @@ $tname=$row['trustname'];
   <br>
   <label style="color:blue;">Type: </label> Religious Trusts
   <br>
-  <label style="color:blue;">Current Fund Status : </label>
-  <br>
+  <?php
+include("connect.php");
+ $sql = "SELECT trustname,sum(amount) FROM transfer GROUP BY trustname ";
+$result = mysqli_query($conn,$sql);
+$flag=0;
+while($row = mysqli_fetch_assoc($result))
+{
+$tname=$row['trustname'];
+$value= $row['sum(amount)'];
+if($tname=='Swamy Ayyappan Temple'){
+  $flag=1;
+  break;
+}
+}
+if($flag==1)
+{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".$value ." <br>";
+}
+else{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".'0' ." <br>";
+}
+?>
 </div>
 <div class="t1">
   <h3 style="color:red;">Sree Ekambaraeshawarar Dharmaraja Temple</h3>
@@ -114,8 +245,28 @@ $tname=$row['trustname'];
   <br>
   <label style="color:blue;">Type: </label> Religious Trusts
   <br>
-  <label style="color:blue;">Current Fund Status : </label>
-  <br>
+  <?php
+include("connect.php");
+ $sql = "SELECT trustname,sum(amount) FROM transfer GROUP BY trustname ";
+$result = mysqli_query($conn,$sql);
+$flag=0;
+while($row = mysqli_fetch_assoc($result))
+{
+$tname=$row['trustname'];
+$value= $row['sum(amount)'];
+if($tname=='Ekambaraeshawarar Dharmaraja'){
+  $flag=1;
+  break;
+}
+}
+if($flag==1)
+{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".$value ." <br>";
+}
+else{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".'0' ." <br>";
+}
+?>
 </div>
 <div class="t1">
   <h3 style="color:red;">Sri Ayappa Seva Smithi</h3>
@@ -126,8 +277,28 @@ $tname=$row['trustname'];
   <br>
   <label style="color:blue;">Type: </label> Religious Trusts
   <br>
-  <label style="color:blue;">Current Fund Status : </label>
-  <br>
+  <?php
+include("connect.php");
+ $sql = "SELECT trustname,sum(amount) FROM transfer GROUP BY trustname ";
+$result = mysqli_query($conn,$sql);
+$flag=0;
+while($row = mysqli_fetch_assoc($result))
+{
+$tname=$row['trustname'];
+$value= $row['sum(amount)'];
+if($tname=='Sri Ayappa Seva Smithi'){
+  $flag=1;
+  break;
+}
+}
+if($flag==1)
+{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".$value ." <br>";
+}
+else{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".'0' ." <br>";
+}
+?>
 </div>
 <div class="t1">
   <h3 style="color:red;">Vaidika Dharma Sahaya Sabha</h3>
@@ -138,8 +309,28 @@ $tname=$row['trustname'];
   <br>
   <label style="color:blue;">Type: </label> Religious Trusts
   <br>
-  <label style="color:blue;">Current Fund Status : </label>
-  <br>
+  <?php
+include("connect.php");
+ $sql = "SELECT trustname,sum(amount) FROM transfer GROUP BY trustname ";
+$result = mysqli_query($conn,$sql);
+$flag=0;
+while($row = mysqli_fetch_assoc($result))
+{
+$tname=$row['trustname'];
+$value= $row['sum(amount)'];
+if($tname=='Vaidika Dharma Sahaya Sabha'){
+  $flag=1;
+  break;
+}
+}
+if($flag==1)
+{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".$value ." <br>";
+}
+else{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".'0' ." <br>";
+}
+?>
 </div>
 <div class="t1">
   <h3 style="color:red;">Sri Shuklajushyakha Trust</h3>
@@ -150,8 +341,28 @@ $tname=$row['trustname'];
   <br>
   <label style="color:blue;">Type: </label> Religious Trusts
   <br>
-  <label style="color:blue;">Current Fund Status : </label>
-  <br>
+  <?php
+include("connect.php");
+ $sql = "SELECT trustname,sum(amount) FROM transfer GROUP BY trustname ";
+$result = mysqli_query($conn,$sql);
+$flag=0;
+while($row = mysqli_fetch_assoc($result))
+{
+$tname=$row['trustname'];
+$value= $row['sum(amount)'];
+if($tname=='Sri Shuklajushyakha Trust'){
+  $flag=1;
+  break;
+}
+}
+if($flag==1)
+{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".$value ." <br>";
+}
+else{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".'0' ." <br>";
+}
+?>
 </div>
 <div class="t1">
   <h3 style="color:red;">Sri Ravishankar Vidya Mandir Trust</h3>
@@ -162,8 +373,28 @@ $tname=$row['trustname'];
   <br>
   <label style="color:blue;">Type: </label> Religious Trusts
   <br>
-  <label style="color:blue;">Current Fund Status : </label>
-  <br>
+ <?php
+include("connect.php");
+ $sql = "SELECT trustname,sum(amount) FROM transfer GROUP BY trustname ";
+$result = mysqli_query($conn,$sql);
+$flag=0;
+while($row = mysqli_fetch_assoc($result))
+{
+$tname=$row['trustname'];
+$value= $row['sum(amount)'];
+if($tname=='Sri Ravishankar Vidya Trust'){
+  $flag=1;
+  break;
+}
+}
+if($flag==1)
+{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".$value ." <br>";
+}
+else{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".'0' ." <br>";
+}
+?>
 </div>
 <div class="t1">
   <h3 style="color:red;">Sri Sai Spiritual Centre Trust</h3>
@@ -174,8 +405,28 @@ $tname=$row['trustname'];
   <br>
   <label style="color:blue;">Type: </label> Religious Trusts
   <br>
-  <label style="color:blue;">Current Fund Status : </label>
-  <br>
+ <?php
+include("connect.php");
+ $sql = "SELECT trustname,sum(amount) FROM transfer GROUP BY trustname ";
+$result = mysqli_query($conn,$sql);
+$flag=0;
+while($row = mysqli_fetch_assoc($result))
+{
+$tname=$row['trustname'];
+$value= $row['sum(amount)'];
+if($tname=='Sri Sai Spiritual Trust'){
+  $flag=1;
+  break;
+}
+}
+if($flag==1)
+{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".$value ." <br>";
+}
+else{
+  echo"<label style='color:blue;'>Current Fund Status :</label>".'0' ." <br>";
+}
+?>
 </div>
 </div>
 </div>
