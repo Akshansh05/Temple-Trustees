@@ -349,7 +349,7 @@ If (mysqli_num_rows($result)> 0) {
     <textarea cols="2" rows="6" style="width:100%;" name="ta"></textarea><br>
    <button type="submit"  class="signup" id="fsub">Submit</button>
     <button type="button" class="cancelbtn" onclick="location.href='profile.php'">Cancel</button><br>
-    <p class="animated bounce infinite" Style="color:red; margin-top:2%;"><b>Notice: </b></p><b Style="color:red; margin-top:2%;"> If you want to withdraw funds please mention in above text area with the payment Id. Your refunds with corresponding payment Id and Amount will be Initiated.</b>
+    <p class="animated bounce infinite" Style="color:red; margin-top:2%;"><b>Notice: </b></p><b Style="color:red; margin-top:2%;"> If you want to withdraw funds please mention in above text area . Your refunds with remaining funds will be Initiated.</b>
   </div>
 </form>
 </div>
