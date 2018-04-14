@@ -339,7 +339,7 @@ If (mysqli_num_rows($result)> 0) {
 <button type="button" class="btn btn-primary btn-lg" Style="background-color:green; margin-left:50%; "  onclick="location.href='profile.php'">ok</button><br>
   </div>
 </div>
-  <button type="button" class="btn btn-primary btn-lg btn-block animated bounceInRight" Style="background-color:#CD853F;" onclick="document.getElementById('id03').style.display='block'">Feedback</button>
+  <button type="button" class="btn btn-primary btn-lg btn-block animated bounceInRight" Style="background-color:#CD853F; margin-bottom:2%;" onclick="document.getElementById('id03').style.display='block'">Feedback</button>
   <div id="id03" class="modal1">
 <form class="modal-content1 animate" method="POST" action="feedback.php" id="feedback"> 
   <div class="container2">    
