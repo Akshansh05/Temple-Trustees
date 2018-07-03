@@ -68,6 +68,7 @@ echo "</script>";
   <title>TEMPLE TRUSTEES</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="s3FxAPw94ahpgI6tKvQ4HvQ9bp2bY3SbdMp9bLRetw4" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
@@ -78,9 +79,12 @@ echo "</script>";
 <link rel="stylesheet" type="text/css" href="index.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+      img[src*="https://cdn.rawgit.com/000webhost/logo/e9bd13f7/footer-powered-by-000webhost-white2.png"] {
+    display: none;}
+  </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -229,8 +233,20 @@ $('#id02').click(function(e) {
          navMain.collapse('hide');
      });
  });
+(function () {
+    var div = document.createElement("div");
+    document.getElementsByTagName('body')[0].appendChild(div);
+    div.outerHTML = "<div id='botDiv' style='height: 65px; position: fixed;float: right;bottom: 0; z-index: 1000; background-color: #fff'><div id='botTitleBar' style='height: 80px; width: 400px; position:fixed; cursor: pointer;'></div><iframe width='400px' height='300px' src='https://console.dialogflow.com/api-client/demo/embedded/04078e3c-27a6-4841-a28a-c2542c983dc5'></iframe></div>"; 
+
+    document.querySelector('body').addEventListener('click', function (e) {
+        e.target.matches = e.target.matches || e.target.msMatchesSelector;
+        if (e.target.matches('#botTitleBar')) { 
+            var botDiv = document.querySelector('#botDiv'); 
+            botDiv.style.height = botDiv.style.height == '300px' ? '65px' : '300px';
+        };
+    });
+}());
 
 </script>
-
 </body>
 </html>
