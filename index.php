@@ -233,7 +233,7 @@ $('#id02').click(function(e) {
          navMain.collapse('hide');
      });
  });
-(function () {
+$(function () {
     var div = document.createElement("div");
     document.getElementsByTagName('body')[0].appendChild(div);
     div.outerHTML = "<div id='botDiv' style='height: 65px; position: fixed;float: right;bottom: 0; z-index: 1000; background-color: #fff'><div id='botTitleBar' style='height: 80px; width: 400px; position:fixed; cursor: pointer;'></div><iframe width='400px' height='300px' src='https://console.dialogflow.com/api-client/demo/embedded/04078e3c-27a6-4841-a28a-c2542c983dc5'></iframe></div>"; 
